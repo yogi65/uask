@@ -32,7 +32,7 @@ Run with one worker, trace enabled:
 
 ### **Run a with specific device --project **
 
-`ENV=qa npx playwright test --grep "E2E Flow" --workers=1 --repeat-each=1 --trace on --project="mobile-chrome"`
+`ENV=qa npx playwright test --grep "TC-A02" --workers=1 --repeat-each=1 --trace on --project="mobile"`
 
 ### **Run a specific test/group using --grep:**
 
