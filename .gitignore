@@ -1,0 +1,30 @@
+# Node modules
+node_modules/
+
+# OS specific files
+.DS_Store         
+Thumbs.db       
+
+# JavaScript files
+*.js
+
+# Log files
+*.log
+
+# Playwright reports, screenshots and videos
+screenshots/
+videos/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# Environment variables
+.env
+
+# IDE specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+

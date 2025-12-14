@@ -1,0 +1,31 @@
+name: PR Validation Workflow
+
+on:
+    pull_request:
+        types: [opened, synchronize, reopened]
+        branches:
+            - main # Specify the target branch for the PRs, adjust if your main branch is named differently
+
+jobs:
+    compilation-check:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Check out repository
+              uses: actions/checkout@v3
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '20'
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Run Playwright compilation check
+              env:
+                  ENV: qa # Set the environment variable
+              run: npx playwright test --list > /dev/null 2>&1
+              # > /dev/null sends the standard output (stdout) to /dev/null, effectively hiding it.
+              # 2>&1 redirects standard error (stderr) to the same place as stdout, so both will be hidden.
+              # This way, any successful output from --list is hidden, while errors or compilation issues will still show in the GitHub Actions log if they occur.
