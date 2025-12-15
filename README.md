@@ -26,7 +26,7 @@ The project requires an ENV variable to pick the correct config (qa, dev, stg).
 
 ### **Run with specific options**
 
-Run with one worker on _both_ devices, trace enabled:
+Run with one worker on **both** devices, trace enabled:
 
 `ENV=qa npx playwright test --workers=1 --repeat-each=1 --trace on`
 
@@ -38,7 +38,7 @@ Run with one worker on _both_ devices, trace enabled:
 
 ### **Run a specific test/group using --grep:**
 
-`ENV=qa npx playwright test --grep "TC-A02" --workers=1 --repeat-each=1 --trace on`
+`ENV=qa npx playwright test --grep "TC-A02" --workers=1 --repeat-each=1 --trace on --project="chromium"`
 
 ### **View HTML Report**
 
